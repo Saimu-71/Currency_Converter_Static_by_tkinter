@@ -1,0 +1,56 @@
+from tkinter import *
+window=Tk()
+window.geometry("600x75")
+window['background']="purple"
+"""canvas=Canvas(window,width=400,height=500)
+canvas.pack()
+canvas.create_text(100,10,text="Converter")"""
+def conversion():
+    bangladeshi_tk=(float(dollar.get())*85.01)
+    t1.delete("1.0",END)
+    t1.insert(END,bangladeshi_tk)
+
+    canadian_tk=(float(dollar.get())*1.27)
+    t2.delete("1.0",END)
+    t2.insert(END,canadian_tk)
+
+    europian_tk=(float(dollar.get())*.83)
+    t3.delete("1.0",END)
+    t3.insert(END,europian_tk)
+b1=Button(window,text="Submit",command=conversion)
+b1.grid(row=1,rowspan=2,column=0)
+dollar=StringVar()
+e1=Entry(window,textvariable=dollar)
+e1.grid(row=1,column=1)
+
+f0=Text(window,height=1,width=15 )
+f0.grid(row=0,column=1)
+
+
+
+f1=Text(window,height=1,width=15 )
+f1.grid(row=0,column=2)
+f2=Text(window,height=1,width=15 )
+f2.grid(row=0,column=3)
+f3=Text(window,height=1,width=15 )
+f3.grid(row=0,column=4)
+
+f0.delete("1.0", END)
+f0.insert(END, "American_USD")
+
+f1.delete("1.0", END)
+f1.insert(END, "Bangladeshi_BDT")
+f2.delete("1.0", END)
+f2.insert(END, "Canadian_CAD")
+f3.delete("1.0", END)
+f3.insert(END, "Europian_EUR")
+
+t1=Text(window,height=1,width=15 )
+t1.grid(row=1,column=2)
+t2=Text(window,height=1,width=15 )
+t2.grid(row=1,column=3)
+t3=Text(window,height=1,width=15 )
+t3.grid(row=1,column=4)
+
+
+window.mainloop()
